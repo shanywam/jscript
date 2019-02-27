@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<button onclick="myFunction()">Try it</button>
+
+<p id="demo"></p>
+	<script>
+		let names=["Em", "Dave", "Shanny", "Steph", "Kevin"];
+		document.getElementById("demo").innerHTML = names;
+		function myFunction() {
+			names.sort();
+			document.getElementById("demo").innerHTML = names;
+		}
+		console.log(myFunction(names));
+
+	</script>
+	
+</body>
+</html>

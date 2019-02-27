@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	var arrays = [['a', 'b'], ['c', 'z'], ['d', 'e', 'f']];
+
+ function all(arr) {
+  if (arr.length === 0) {
+    return [];
+  } 
+else if (arr.length ===1){
+return arr[0];
+}
+else {
+    var result = [];
+    var allCases = all(arr.slice(1));  // recur with the rest of array
+    for (var c in allCases) {
+      for (var i = 0; i < arr[0].length; i++) {
+        result.push(arr[0][i] + allCases[c]);
+      }
+    }
+    return result;
+  }
+
+}
+console.log(all(arrays));
+</script>
+</body>
+</html>
