@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JS DOM paragraph style</title>
+</head> 
+<body>
+    <p id ='text'>JavaScript Exercises - w3resource</p> 
+    <div>
+    	<br/>
+        <br/>
+        <br/>
+        <button id="jsstyle"
+        onclick="updateMyPage()">Style</button>
+    </div>
+	<script type="text/javascript">
+	 
+
+	 	function updateMyPage() {
+        let item = document.getElementById('text');
+        item.style.color = 'red';
+        item.style.fontSize = '28px';
+    }	
+
+	</script>
+
+
+</body>
+</html>
