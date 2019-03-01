@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="">
+    <label>fname
+        <input type="text" id="fname" onkeyup="validatefname()">
+    </label>
+    <br/>
+    <br/>
+    <label>lname
+        <input type="text" id="lname" onkeyup="validatelname()">
+    </label>
+    <br/>
+    <br/>
+    <label>email
+        <input type="text" id="email" onkeyup="validatemail()">
+    </label>
+    <br/>
+    <br/>
+    <label>phone
+        <input type="number" id="phone" onkeyup="validatephone()">
+    </label>
+    <br/>
+    <br/>
+    <label>password
+        <input type="text" id="password" onkeyup="validatepassword()">
+    </label>
+    <br/>
+    <br/>
+    <label>confirm_password
+        <input type="text" id="confirm_password" onkeyup="validateconfirm_password()">
+    </label>
+    <br/>
+    <br/>
+
+    <p id="message"></p>
+
+    <button type="button" id="save" >
+        Save
+    </button>
+</form>
+
+<script>
+    function validatefname() {
+        let fname = document.getElementById('fname'),
+            message = document.getElementById('message'),
+            savebutton = document.getElementById('save');
+        name.style.outline = 'none';
+        if (fname.value.length < 3) {
+            fname.style.border = '1px solid red';
+            message.style.color = 'red';
+            message.innerText = 'FName is too short';
+        } else {
+            fname.style.border = '1px solid green';
+            message.style.color = 'blue';
+            message.innerText = 'You can  Save user now';
+            savebutton.removeAttribute('disabled');
+        }
+    }
+    function validatelname() {
+        let lname = document.getElementById('lname'),
+            message = document.getElementById('message'),
+            savebutton = document.getElementById('save');
+        name.style.outline = 'none';
+        if (fname.value.length < 3) {
+            fname.style.border = '1px solid red';
+            message.style.color = 'red';
+            message.innerText = 'lName is too short';
+        } else {
+            fname.style.border = '1px solid green';
+            message.style.color = 'blue';
+            message.innerText = 'You can  Save user now';
+            savebutton.removeAttribute('disabled');
+        }
+    }
+    function emailIsValid(email) {
+        const emailRegex = /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i;
+        return emailRegex.test(String(email).toLowerCase());
+        }
+        if (!emailIsValid(email)) {
+            email = 'Enter a valid Email';
+        } else {
+            email = 'Email is correct'
+            }
+
+    function phoneisValid(phone) {
+        let phoneRe = /^[(]{0,1}[0-9]{3}[)]{0,1}[-\s\.]{0,1}[0-9]{3}[-\s\.]{0,1}[0-9]{4}$/
+        let digits = p.replace(/\D/g, "");
+        return phoneRe.test(digits);
+        }
+
+    function passwordValid(password){
+        let passwordRegex = /^(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,}$/;
+        return passwordRegex.test(password)
+        }
+
+    function confirm_passwordValid(confirm_password){
+        let confirm_passwordRegex = /^(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,}$/;
+        return confirm_passwordRegex.test(confirm_password)
+        }
+        
+
+
+</script>
+</body>
+</html>
